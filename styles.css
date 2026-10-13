@@ -151,10 +151,44 @@ address { font-style: normal; }
 .saved-order-box h3 { color: var(--brown); font-size: 1.45rem; }
 .saved-order-box .button { font-size: .88rem; }
 .button:disabled { cursor: not-allowed; opacity: .55; }
-.field-error { display: block; color: var(--brown); font-size: .88rem; font-weight: 700; min-height: 1.25em; margin-top: .2rem; }
-[aria-invalid="true"]:not([type="radio"]) { border: 2px solid var(--brown); }
-.radio-row:has(input[aria-invalid="true"]) { outline: 2px solid var(--brown); outline-offset: 4px; border-radius: 4px; }
+/* Validation errors: vivid red is a functional warning, not a brand color. */
+.field-error {
+  display: block;
+  color: #A10E21;
+  font-size: .94rem;
+  font-weight: 800;
+  min-height: 1.25em;
+  margin-top: .3rem;
+}
+.field-error:not(:empty)::before { content: "⚠ "; }
+
+[aria-invalid="true"]:not([type="radio"]) {
+  border: 3px solid #D71935;
+  background: #FFF0F2;
+  box-shadow: 0 0 0 2px rgba(215, 25, 53, .14);
+}
+[aria-invalid="true"]:not([type="radio"]):focus-visible {
+  outline: 3px solid #D71935;
+  outline-offset: 3px;
+}
+.field:has([aria-invalid="true"]) > label,
+.field:has([aria-invalid="true"]) > .field-label {
+  color: #A10E21;
+}
+.radio-row:has(input[aria-invalid="true"]) {
+  border: 3px solid #D71935;
+  background: #FFF0F2;
+  border-radius: 6px;
+  padding: .45rem .6rem;
+  outline: 2px solid rgba(215, 25, 53, .14);
+  outline-offset: 2px;
+}
+.radio-row:has(input[aria-invalid="true"]):focus-within {
+  outline: 3px solid #D71935;
+  outline-offset: 3px;
+}
 .form-status { font-weight: 700; min-height: 1.5em; max-width: 45rem; }
+.form-status:not(:empty) { margin-top: .5rem; }
 @media (min-width: 760px) {
   .saved-favorites { flex-direction: row; justify-content: space-between; align-items: center; padding: 2rem; }
   .saved-favorites > div { flex: 1 1 auto; }
