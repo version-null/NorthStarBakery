@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ask a question or request a preorder from North Star Bakery.">
+  <title>Contact & Preorders | North Star Bakery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="North Star Bakery home">
+        <img src="media/bakery-logo_c.png" alt="North Star Bakery logo" width="88" height="75">
+        <span class="brand-caption">BAKED WITH HEART, SHARED WITH NEIGHBORS</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html" aria-current="page">Contact &amp; Preorders</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="page-hero shell">
+      <p class="eyebrow">LET'S TALK BAKED GOODS</p>
+      <h1>Questions? We're listening.</h1>
+      <p class="lead narrow">Tell us what you're dreaming up, whether it's a celebration cake or a question about our bread.</p>
+    </section>
+
+    <section class="section shell contact-layout" aria-labelledby="form-heading">
+      <div class="form-panel">
+        <h2 id="form-heading">Inquiry &amp; preorder request</h2>
+        <p class="muted-note">Fields marked * are required. This is a practice form that demonstrates built-in HTML validation; it does not send messages without a server.</p>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Your contact details</legend>
+            <div class="form-row">
+              <div class="field">
+                <label for="full-name">Full name *</label>
+                <input id="full-name" name="full_name" type="text" autocomplete="name" minlength="2" maxlength="80" required>
+              </div>
+              <div class="field">
+                <label for="email">Email address *</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Tell us about your request</legend>
+            <div class="field">
+              <span class="field-label" id="request-label">Request type *</span>
+              <div class="radio-row" role="group" aria-labelledby="request-label">
+                <label class="radio-option" for="preorder"><input id="preorder" name="request_type" type="radio" value="preorder" required> Preorder</label>
+                <label class="radio-option" for="question"><input id="question" name="request_type" type="radio" value="question"> General question</label>
+              </div>
+            </div>
+            <div class="field">
+              <label for="pickup-date">Preferred pickup date (for preorders)</label>
+              <input id="pickup-date" name="pickup_date" type="date">
+            </div>
+            <div class="field">
+              <label for="item-details">Item details or question *</label>
+              <textarea id="item-details" name="item_details" rows="5" maxlength="500" required></textarea>
+            </div>
+            <div class="field">
+              <label for="allergy-notes">Allergy notes (if applicable)</label>
+              <textarea id="allergy-notes" name="allergy_notes" rows="3" maxlength="300"></textarea>
+            </div>
+          </fieldset>
+          <button class="button" type="submit">Send inquiry</button>
+        </form>
+      </div>
+
+      <aside class="contact-sidebar" aria-label="Visit the bakery">
+        <div class="info-panel">
+          <p class="eyebrow">STOP BY</p>
+          <h2>Find us</h2>
+          <address>North Star Bakery<br>Street address to be confirmed<br>City and ZIP to be confirmed</address>
+        </div>
+        <div class="info-panel">
+          <p class="eyebrow">OPENING HOURS</p>
+          <h2>When to visit</h2>
+          <ul class="hours-list">
+            <li><span>Monday–Friday</span><strong>7 a.m.–5 p.m.</strong></li>
+            <li><span>Saturday</span><strong>8 a.m.–3 p.m.</strong></li>
+            <li><span>Sunday</span><strong>Closed</strong></li>
+          </ul>
+          <p class="muted-note">Sample hours for this student project, pending confirmation.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p><strong>North Star Bakery</strong> &nbsp; | &nbsp; Fresh from our neighborhood oven.</p>
+      <p>&copy; 2026 North Star Bakery. Sample student website.</p>
+    </div>
+  </footer>
+</body>
+</html>
