@@ -6,6 +6,7 @@
   <meta name="description" content="Explore handmade bread, pastries, and celebration cakes at North Star Bakery.">
   <title>Our Products | North Star Bakery</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -45,6 +46,7 @@
             <h3 id="bread-heading">Artisan breads</h3>
             <p>Hearty loaves with golden crusts for morning toast, sandwiches, and gathering around the table.</p>
             <p class="price">Example range: $6–$11 per loaf</p>
+            <button class="button button-outline favorite-button" type="button" data-favorite-id="bread" aria-pressed="false">♡ Save to favorites</button>
           </div>
         </article>
         <article class="product-card" aria-labelledby="pastry-heading">
@@ -53,6 +55,7 @@
             <h3 id="pastry-heading">Pastries &amp; treats</h3>
             <p>Flaky and sweet morning favorites for commuters, families, and anyone who deserves a midday treat.</p>
             <p class="price">Example range: $3–$6 each</p>
+            <button class="button button-outline favorite-button" type="button" data-favorite-id="pastries" aria-pressed="false">♡ Save to favorites</button>
           </div>
         </article>
         <article class="product-card" aria-labelledby="cake-heading">
@@ -61,8 +64,20 @@
             <h3 id="cake-heading">Celebration cakes</h3>
             <p>Cakes for birthdays, gatherings, and special days. Ask us about sizes, flavors, and lead times.</p>
             <p class="price">Example range: $25–$65 per cake</p>
+            <button class="button button-outline favorite-button" type="button" data-favorite-id="cakes" aria-pressed="false">♡ Save to favorites</button>
           </div>
         </article>
+      </div>
+      <div class="saved-favorites" aria-labelledby="saved-favorites-heading">
+        <div>
+          <p class="eyebrow">YOUR SHORTLIST</p>
+          <h2 id="saved-favorites-heading">Your bakery favorites</h2>
+          <p id="favorite-count" class="saved-count">0 favorites saved</p>
+          <p id="favorites-empty">Select “Save to favorites” above to start a shortlist.</p>
+          <ul id="favorite-list" class="favorites-list"></ul>
+          <p id="favorite-feedback" class="feedback-note" role="status" aria-live="polite"></p>
+        </div>
+        <a id="favorites-preorder-link" class="button" href="contact.html" hidden>Use my favorites in a request</a>
       </div>
     </section>
 

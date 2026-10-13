@@ -6,6 +6,7 @@
   <meta name="description" content="Ask a question or request a preorder from North Star Bakery.">
   <title>Contact & Preorders | North Star Bakery</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -35,18 +36,26 @@
     <section class="section shell contact-layout" aria-labelledby="form-heading">
       <div class="form-panel">
         <h2 id="form-heading">Inquiry &amp; preorder request</h2>
-        <p class="muted-note">Fields marked * are required. This is a practice form that demonstrates built-in HTML validation; it does not send messages without a server.</p>
-        <form action="#" method="post">
+        <p class="muted-note">Fields marked * are required. This student project checks entries but does not send real orders or messages.</p>
+        <div class="saved-order-box" aria-labelledby="saved-order-heading">
+          <h3 id="saved-order-heading">Bring along your saved favorites</h3>
+          <p id="form-favorites-hint">Your saved product choices will appear here.</p>
+          <ul id="form-favorites-list" class="favorites-list"></ul>
+          <button id="fill-favorites" class="button button-outline" type="button" disabled>Add favorites to item details</button>
+        </div>
+        <form id="preorder-form" action="#" method="post" novalidate>
           <fieldset>
             <legend>Your contact details</legend>
             <div class="form-row">
               <div class="field">
                 <label for="full-name">Full name *</label>
-                <input id="full-name" name="full_name" type="text" autocomplete="name" minlength="2" maxlength="80" required>
+                <input id="full-name" name="full_name" type="text" autocomplete="name" minlength="2" maxlength="80" aria-describedby="full-name-error" required>
+                <span id="full-name-error" class="field-error" aria-live="polite"></span>
               </div>
               <div class="field">
                 <label for="email">Email address *</label>
-                <input id="email" name="email" type="email" autocomplete="email" required>
+                <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-error" required>
+                <span id="email-error" class="field-error" aria-live="polite"></span>
               </div>
             </div>
           </fieldset>
@@ -55,25 +64,30 @@
             <legend>Tell us about your request</legend>
             <div class="field">
               <span class="field-label" id="request-label">Request type *</span>
-              <div class="radio-row" role="group" aria-labelledby="request-label">
+              <div class="radio-row" role="group" aria-labelledby="request-label" aria-describedby="request-type-error request-memory-note">
                 <label class="radio-option" for="preorder"><input id="preorder" name="request_type" type="radio" value="preorder" required> Preorder</label>
                 <label class="radio-option" for="question"><input id="question" name="request_type" type="radio" value="question"> General question</label>
               </div>
+              <span id="request-type-error" class="field-error" aria-live="polite"></span>
+              <p id="request-memory-note" class="muted-note" role="status" aria-live="polite"></p>
             </div>
             <div class="field">
               <label for="pickup-date">Preferred pickup date (for preorders)</label>
-              <input id="pickup-date" name="pickup_date" type="date">
+              <input id="pickup-date" name="pickup_date" type="date" aria-describedby="pickup-date-error">
+              <span id="pickup-date-error" class="field-error" aria-live="polite"></span>
             </div>
             <div class="field">
               <label for="item-details">Item details or question *</label>
-              <textarea id="item-details" name="item_details" rows="5" maxlength="500" required></textarea>
+              <textarea id="item-details" name="item_details" rows="5" minlength="10" maxlength="500" aria-describedby="item-details-error" required></textarea>
+              <span id="item-details-error" class="field-error" aria-live="polite"></span>
             </div>
             <div class="field">
               <label for="allergy-notes">Allergy notes (if applicable)</label>
               <textarea id="allergy-notes" name="allergy_notes" rows="3" maxlength="300"></textarea>
             </div>
           </fieldset>
-          <button class="button" type="submit">Send inquiry</button>
+          <button class="button" type="submit">Check my request</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
 
